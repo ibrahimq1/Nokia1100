@@ -367,81 +367,81 @@ int pointer = 0;
 
 while(true)
 {
-system("cls");
+    system("cls");
 
-SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-cout << "Mobile Phone Bills\n\n";
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+    cout << "Mobile Phone Bills\n\n";
 
-for (int i = 0; i < 5; ++i)
-{
-if (i == pointer)
-{
-SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
-cout << Menu[i] << endl;
-}
-else
-{
-SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-cout << Menu[i] << endl;
-}
+    for (int i = 0; i < 5; ++i)
+    {
+    if (i == pointer)
+    {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    cout << Menu[i] << endl;
+    }
+    else
+    {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+    cout << Menu[i] << endl;
+    }
 }
 
 while(true)
 {
-if (GetAsyncKeyState(VK_UP) != 0)
-{
-pointer -= 1;
-if (pointer == -1)
-{
-pointer = 4;
-}
-break;
-}
-else if (GetAsyncKeyState(VK_DOWN) != 0)
-{
-pointer += 1;
-if (pointer == 5)
-{
-pointer = 0;
-}
-break;
-}
-else if (GetAsyncKeyState(0x48) != 0)
+    if (GetAsyncKeyState(VK_UP) != 0)
+    {
+        pointer -= 1;
+        if (pointer == -1)
+        {
+            pointer = 4;
+        }
+        break;
+    }
+    else if (GetAsyncKeyState(VK_DOWN) != 0)
+    {
+        pointer += 1;
+        if (pointer == 5)
+        {
+            pointer = 0;
+        }
+        break;
+    }
+    else if (GetAsyncKeyState(0x48) != 0)
 
-{
-switch (pointer)
-{
-case 0:
-{
-cout << "\n\n\n";
-contact b1;
-b1.getCall();
-Sleep(5000);
-system("cls");
-//return 0;
+    {
+    switch (pointer)
+    {
+    case 0:
+    {
+    cout << "\n\n\n";
+    contact b1;
+    b1.getCall();
+    Sleep(5000);
+    system("cls");
+    //return 0;
 
-} break;
-case 1:
-{
-cout << "\n\n\n";
-Balance1();
-Sleep(1000);
-//return 0;
-} break;
-case 2:
-{
-cout<<"This is your call log"<< endl;
-} break;
-case 3:
-{
-Phmain();
+    } break;
+    case 1:
+    {
+    cout << "\n\n\n";
+    Balance1();
+    Sleep(1000);
+    //return 0;
+    } break;
+    case 2:
+    {
+    cout<<"This is your call log"<< endl;
+    } break;
+    case 3:
+    {
+    Phmain();
 
-}break;
-case 4:
-{
-ExitProcess(0);
-}
-}
+    }break;
+    case 4:
+    {
+    ExitProcess(0);
+    }
+    }
 }
 
 }
